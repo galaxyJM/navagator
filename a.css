@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+kbd{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 2.5;
+    text-transform: uppercase;
+    margin-left: 17px;
+    position: relative;
+}
+
+#farther{
+    padding-top: 110px;
+}
+
+#farther div{
+    text-align: center;
+    padding-top: 18px;
+    
+}
+
+kbd > button{
+    display: none;
+    position: absolute;
+    left: 13px;
+    top: 35px;
+}
+
+kbd:hover > button{
+    display: inline-block;
+    
+}

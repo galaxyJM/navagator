@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./a.css">
+</head>
+<body>
+    <header></header>
+    <main id="farther">
+    </main>
+    <footer></footer>
+    <script>
+        var keys={
+            0:['q','w','e','r','t','y','u'],
+            1:['a','s','d','f','g','h','j'],
+            2:['z','x','c','v','b','n'],
+            length:3
+        }
+        var hash={
+            'q':'qq.com',
+            'w':'weibo.com',
+            'b':'baidu.com'
+
+        }
+        
+        for(var i=0;i<keys.length;i++)
+        {
+            div1 = document.createElement('div')
+            farther.appendChild(div1)
+            row=keys[i]
+            var j=0
+            while(j<row.length)
+            {
+                keyb = document.createElement('kbd')
+                button1 = document.createElement('button')
+                keyb.textContent=row[j]
+                div1.appendChild(keyb)
+                keyb.appendChild(button1)
+                button1.textContent='编辑'
+                j++
+            }
+        }
+
+        document.onkeypress = function(inputdata)   //键盘监听的对象是document
+        {
+             invalue = inputdata.key
+             website = hash[invalue]
+             //第一种方法：在现在的窗口打开 location.href= 'https://'+website
+             window.open('https://'+website,'_blank')
+        }
+
+
+    </script>
+</body>
+</html>
