@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./a.css">
+    <title>Document</title>
 </head>
 <body>
     <header></header>
@@ -25,6 +25,12 @@
             'b':'baidu.com'
 
         }
+
+        newhash = JSON.parse(localStorage.getItem("old"))
+        if(newhash)
+        {
+            hash = newhash
+        }
         
         for(var i=0;i<keys.length;i++)
         {
@@ -39,6 +45,15 @@
                 keyb.textContent=row[j]
                 div1.appendChild(keyb)
                 keyb.appendChild(button1)
+                button1.id = row[j]
+                button1.onclick = function(mouse)
+                {
+                    key = mouse['target']['id']
+                    content = prompt("给我一个网址")
+                    hash[key] = content
+                    localStorage.setItem("old",JSON.stringify(hash))  //为了应对刷新页面使得hash变量重置，必须将编辑过后的hash存储在一个地方
+
+                }
                 button1.textContent='编辑'
                 j++
             }
